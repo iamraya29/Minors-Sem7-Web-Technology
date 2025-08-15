@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Personal Details & Academic Marks Form</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  fieldset {
+    border: 1.5px solid #000;
+    padding: 1.5rem 2rem 2rem 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+  }
+  legend {
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0 10px;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    margin-bottom: 1rem;
+    border: 1.5px solid #000;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    color: #000;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus,
+  select:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+  .inline-inputs {
+    display: flex;
+    gap: 1rem;
+  }
+  .inline-inputs > div {
+    flex: 1;
+  }
+  button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+  button:hover {
+    background-color: #333;
+  }
+  .note {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: -0.75rem;
+    margin-bottom: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Student Personal & Academic Details</h1>
+
+<form action="https://httpbin.org/post" method="POST" novalidate>
+
+  <fieldset>
+    <legend>Personal Information</legend>
+
+    <label for="fullName">Full Name *</label>
+    <input type="text" id="fullName" name="fullName" placeholder="e.g., John Doe" required />
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" placeholder="e.g., john@example.com" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="+1-234-567-8901" pattern="\+?\d{7,15}" />
+
+    <label for="dob">Date of Birth *</label>
+    <input type="date" id="dob" name="dob" required />
+  </fieldset>
+
+  <fieldset>
+    <legend>10th Grade Details</legend>
+
+    <label for="tenthSchool">School Name *</label>
+    <input type="text" id="tenthSchool" name="tenthSchool" placeholder="Name of 10th Grade School" required />
+
+    <label for="tenthMarks">Marks Obtained (%) *</label>
+    <input
+      type="number"
+      id="tenthMarks"
+      name="tenthMarks"
+      min="0"
+      max="100"
+      step="0.01"
+      placeholder="e.g., 87.50"
+      required
+    />
+   
+    <label for="tenthBoard">Board *</label>
+    <select id="tenthBoard" name="tenthBoard" required>
+      <option value="" disabled selected>Select Board</option>
+      <option value="CBSE">CBSE</option>
+      <option value="ICSE">ICSE</option>
+      <option value="State Board">State Board</option>
+      <option value="Other">Other</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>12th Grade Details</legend>
+
+    <label for="twelfthCollege">College Name *</label>
+    <input type="text" id="twelfthCollege" name="twelfthCollege" placeholder="Name of 12th Grade College" required />
+
+    <label for="twelfthMarks">Marks Obtained (%) *</label>
+    <input
+      type="number"
+      id="twelfthMarks"
+      name="twelfthMarks"
+      min="0"
+      max="100"
+      step="0.01"
+      placeholder="e.g., 91.20"
+      required
+    />
+   
+    <label for="twelfthBoard">Board *</label>
+    <select id="twelfthBoard" name="twelfthBoard" required>
+      <option value="" disabled selected>Select Board</option>
+      <option value="CBSE">CBSE</option>
+      <option value="ISC">ISC</option>
+      <option value="State Board">State Board</option>
+      <option value="Other">Other</option>
+    </select>
+  </fieldset>
+
+  <button type="submit">Submit Details</button>
+</form>
+
+</body>
+</html>
